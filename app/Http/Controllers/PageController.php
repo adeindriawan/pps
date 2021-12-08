@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Auth;
+use App\Models\Unit;
 
 class PageController extends Controller
 {
@@ -36,6 +37,7 @@ class PageController extends Controller
         } else {
             $data['role'] = 'SKK';
         }
+        $data['units'] = Unit::all();
 
         return view('backview.usersForm', compact('data'));
     }
