@@ -16,7 +16,7 @@ use App\Http\Controllers\UsersManagementController;
 |
 */
 
-Route::get('/', [PageController::class, 'dashboardPage']);
+Route::get('/', [AuthController::class, 'signInPage']);
 Route::middleware(['auth'])->group(function() {
     Route::get('/dashboard', [PageController::class, 'dashboardPage'])->name('dashboard');
     Route::get('/users/usersTable', [PageController::class, 'usersTablePage'])->name('users');
