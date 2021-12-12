@@ -26,6 +26,7 @@ Route::middleware(['auth'])->group(function() {
     Route::post('/units/store', [UsersManagementController::class, 'storeUnit']);
     Route::get('/traffic', [PageController::class, 'trafficPage'])->name('traffic');
     Route::get('/report', [PageController::class, 'reportPage'])->name('report');
+    Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 });
 Route::get('/login', [AuthController::class, 'signInPage'])->name('login');
 Route::post('/signin', [AuthController::class, 'signIn'])->name('signin');
